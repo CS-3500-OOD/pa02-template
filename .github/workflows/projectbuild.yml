@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: self-hosted
-    timeout-minutes: 3
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v3
@@ -14,11 +14,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 17
-          distribution: 'adopt'
+          distribution: 'corretto'
           cache: gradle
 
       - name: Build the project
-        run: ./gradlew build
+        run: ./gradlew check
 
       # Note that running test task will also perform code coverage
       - name: Run Tests
