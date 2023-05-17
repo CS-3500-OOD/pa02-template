@@ -44,6 +44,8 @@ test {
     useJUnitPlatform()
     testLogging {
         showStandardStreams = true
+        events "failed"
+        exceptionFormat "full"
     }
 //    beforeTest { descriptor ->
 //        logger.lifecycle("Running test: " + descriptor)
