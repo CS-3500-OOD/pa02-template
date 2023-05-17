@@ -14,6 +14,7 @@ class DriverTest {
 
   @Test
   public void fakeTest2() {
+    System.err.println("An error message...");
     assertEquals(6, 7);
   }
 
