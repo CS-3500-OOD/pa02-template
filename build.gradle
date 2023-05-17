@@ -18,9 +18,9 @@ application {
 test {
     finalizedBy jacocoTestReport // generate report after code coverage test
 }
-jacocoTestReport {
-    dependsOn test // make sure that test task run before reports are run.
-}
+//jacocoTestReport {
+//    dependsOn test // make sure that test task run before reports are run.
+//}
 
 group 'cs3500.project'
 version '1.0-SNAPSHOT'
@@ -42,5 +42,11 @@ test {
     useJUnitPlatform()
     testLogging {
         showStandardStreams = true
+    }
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+    onOutput { descriptor, event ->
+        logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
     }
 }
