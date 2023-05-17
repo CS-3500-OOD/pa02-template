@@ -20,7 +20,7 @@ jobs:
           cache: gradle
 
       - name: Build the project
-        run: ./gradlew check --debug
+        run: ./gradlew check --info
 
       # Note that running test task will also perform code coverage
       #- name: Run Tests
