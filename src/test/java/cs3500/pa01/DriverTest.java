@@ -12,4 +12,9 @@ class DriverTest {
     assertEquals(5, 5);
   }
 
+  @Test
+  public void fakeTest2() {
+    assertEquals(6, 7);
+  }
+
 }
