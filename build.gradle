@@ -14,7 +14,9 @@ application {
 }
 
 //Jacoco for code coverage
-
+jacoco {
+    toolVersion = "0.8.10"
+}
 test {
     finalizedBy jacocoTestReport // generate report after code coverage test
 }
@@ -41,8 +43,12 @@ dependencies {
 test {
     useJUnitPlatform()
     testLogging {
-        showStandardStreams = true
+//        showStandardStreams = true
+        events "PASSED", "SKIPPED", "FAILED", "STANDARD_OUT", "STANDARD_ERROR"
     }
+//    testLogging {
+//        events("passed", "skipped", "failed")
+//    }
     beforeTest { descriptor ->
         logger.lifecycle("Running test: " + descriptor)
     }
