@@ -18,11 +18,11 @@ jobs:
           cache: gradle
 
       - name: Build the project
-        run: ./gradlew check
+        run: ./gradlew check --info
 
       # Note that running test task will also perform code coverage
-      - name: Run Tests
-        run: ./gradlew test
+      #- name: Run Tests
+      #  run: ./gradlew test
 
       - name: Produce JavaDoc
         run: ./gradlew javadoc
